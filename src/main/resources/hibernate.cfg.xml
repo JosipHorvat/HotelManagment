@@ -45,7 +45,9 @@
         
         <!-- Ovdje navodimo naše mapirane klase -->
          <mapping class="hr.horvat.model.Gost"/>
-       <!-- <mapping class="hr.edunova.jp22.model.Operater" /> -->
+         <mapping class="hr.horvat.model.Hotel"/>
+          <mapping class="hr.horvat.model.Osoblje"/>
+       
         
         
     </session-factory>

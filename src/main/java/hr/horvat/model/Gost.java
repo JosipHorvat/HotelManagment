@@ -7,21 +7,28 @@ package hr.horvat.model;
 
 import java.util.Date;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 /**
  *
  * @author Josip
  */
 @Entity
-public class Gost extends Entitet{
+public class Gost extends Osoba{
     
-    private String ime;
-    private String prezime;
-    private String email;
-    private String oib;
-    private Date datumRodjenja;
+    @Enumerated(EnumType.STRING)
+    private VrstaPlacanja vrstaPlacanja;
+    
+    public static enum VrstaPlacanja{
+        gotovina,
+        kartica
+    }
+    
     private String drzava;
-    private String grad;
+    private String brojTelefona;
+    private String brojKreditneKartice;
+    
 
     public String getDrzava() {
         return drzava;
@@ -31,52 +38,28 @@ public class Gost extends Entitet{
         this.drzava = drzava;
     }
 
-    public String getGrad() {
-        return grad;
+    public VrstaPlacanja getVrstaPlacanja() {
+        return vrstaPlacanja;
     }
 
-    public void setGrad(String grad) {
-        this.grad = grad;
+    public void setVrstaPlacanja(VrstaPlacanja vrstaPlacanja) {
+        this.vrstaPlacanja = vrstaPlacanja;
     }
 
-    public String getIme() {
-        return ime;
+    public String getBrojTelefona() {
+        return brojTelefona;
     }
 
-    public void setIme(String ime) {
-        this.ime = ime;
+    public void setBrojTelefona(String brojTelefona) {
+        this.brojTelefona = brojTelefona;
     }
 
-    public String getPrezime() {
-        return prezime;
+    public String getBrojKreditneKartice() {
+        return brojKreditneKartice;
     }
 
-    public void setPrezime(String prezime) {
-        this.prezime = prezime;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getOib() {
-        return oib;
-    }
-
-    public void setOib(String oib) {
-        this.oib = oib;
-    }
-
-    public Date getDatumRodjenja() {
-        return datumRodjenja;
-    }
-
-    public void setDatumRodjenja(Date datumRodjenja) {
-        this.datumRodjenja = datumRodjenja;
-    }
+    public void setBrojKreditneKartice(String brojKreditneKartice) {
+        this.brojKreditneKartice = brojKreditneKartice;
+    }  
     
 }
