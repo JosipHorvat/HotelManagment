@@ -35,6 +35,9 @@ public class Hotel extends Entitet{
     
     @OneToMany(mappedBy = "hotel")
     private List<Osoblje> osoblje = new ArrayList<>();
+    
+     @OneToMany(mappedBy = "hotel")
+    private List<Soba> sobe = new ArrayList<>();
 
     public String getNaziv() {
         return naziv;

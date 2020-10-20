@@ -47,6 +47,7 @@
          <mapping class="hr.horvat.model.Gost"/>
          <mapping class="hr.horvat.model.Hotel"/>
           <mapping class="hr.horvat.model.Osoblje"/>
+          <mapping class="hr.horvat.model.Soba"/>
        
         
         
