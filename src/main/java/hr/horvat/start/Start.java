@@ -6,6 +6,7 @@
 package hr.horvat.start;
 
 import hr.horvat.utility.HibernateUtil;
+import hr.horvat.utility.PocetniInsertUBazu;
 
 /**
  *
@@ -15,6 +16,7 @@ public class Start {
     
     public static void main(String[] args) {
         
-        HibernateUtil.getSessionFactory().openSession();
+       // HibernateUtil.getSessionFactory().openSession();
+        PocetniInsertUBazu.izvedi();
     }
 }
