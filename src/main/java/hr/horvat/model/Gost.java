@@ -32,6 +32,17 @@ public class Gost extends Osoba{
     private String brojKreditneKartice;
     
     @OneToMany(mappedBy = "gost")
+    private List<Dostavnica> dostavnice = new ArrayList<>();
+
+    public List<Dostavnica> getDostavnice() {
+        return dostavnice;
+    }
+
+    public void setDostavnice(List<Dostavnica> dostavnice) {
+        this.dostavnice = dostavnice;
+    }
+    
+    @OneToMany(mappedBy = "gost")
     private List<Rezervacija> rezervacije = new ArrayList<>();
 
     public List<Rezervacija> getRezervacije() {

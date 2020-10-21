@@ -11,6 +11,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -27,17 +28,20 @@ public class Rezervacija extends Entitet{
     
     @ManyToMany(mappedBy = "rezervacije")
     private List<Soba> sobe = new ArrayList<>();
-
-    public List<Soba> getSobe() {
-        return sobe;
-    }
-
-    public void setSobe(List<Soba> sobe) {
-        this.sobe = sobe;
-    }
     
     @ManyToOne
     private Gost gost;
+    
+    @OneToMany(mappedBy = "gost")
+    private List<Dostavnica> dostavnice = new ArrayList<>();
+
+    public List<Dostavnica> getDostavnice() {
+        return dostavnice;
+    }
+
+    public void setDostavnice(List<Dostavnica> dostavnice) {
+        this.dostavnice = dostavnice;
+    }
 
     public Gost getGost() {
         return gost;
@@ -85,6 +89,14 @@ public class Rezervacija extends Entitet{
 
     public void setBrojSoba(Integer brojSoba) {
         this.brojSoba = brojSoba;
+    }
+    
+     public List<Soba> getSobe() {
+        return sobe;
+    }
+
+    public void setSobe(List<Soba> sobe) {
+        this.sobe = sobe;
     }
     
 }

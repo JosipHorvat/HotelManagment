@@ -49,6 +49,7 @@
           <mapping class="hr.horvat.model.Osoblje"/>
           <mapping class="hr.horvat.model.Soba"/>
           <mapping class="hr.horvat.model.Rezervacija"/>
+          <mapping class="hr.horvat.model.Dostavnica"/>
        
         
         

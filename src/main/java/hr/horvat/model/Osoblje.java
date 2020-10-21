@@ -6,8 +6,11 @@
 package hr.horvat.model;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -22,6 +25,17 @@ public class Osoblje extends Osoba{
     
     @ManyToOne
     private Hotel hotel;
+    
+    @OneToMany(mappedBy = "gost")
+    private List<Dostavnica> dostavnice = new ArrayList<>();
+
+    public List<Dostavnica> getDostavnice() {
+        return dostavnice;
+    }
+
+    public void setDostavnice(List<Dostavnica> dostavnice) {
+        this.dostavnice = dostavnice;
+    }
 
     public String getOdjel() {
         return odjel;
