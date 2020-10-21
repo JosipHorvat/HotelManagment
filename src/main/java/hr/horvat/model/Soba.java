@@ -5,9 +5,14 @@
  */
 package hr.horvat.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 /**
@@ -33,7 +38,16 @@ public class Soba extends Entitet{
         Quad,Queen,King,Twin,
         DoubleDouble
          }
-           
+    
+    @ManyToMany
+    @JoinTable(
+    name = "rezervirane_sobe",
+            joinColumns = @JoinColumn(name = "soba"),
+            inverseJoinColumns = @JoinColumn(name = "rezervacija")
+    )
+    private List<Rezervacija> rezervacije = new ArrayList<>();
+    
+
          @ManyToOne
     private Hotel hotel;
 
@@ -107,6 +121,14 @@ public class Soba extends Entitet{
 
     public void setHotel(Hotel hotel) {
         this.hotel = hotel;
+    }
+    
+    public List<Rezervacija> getRezervacije() {
+        return rezervacije;
+    }
+
+    public void setRezervacije(List<Rezervacija> rezervacije) {
+        this.rezervacije = rezervacije;
     }
          
 }

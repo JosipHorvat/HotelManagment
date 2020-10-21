@@ -44,10 +44,11 @@
         
         
         <!-- Ovdje navodimo naše mapirane klase -->
-         <mapping class="hr.horvat.model.Gost"/>
-         <mapping class="hr.horvat.model.Hotel"/>
+          <mapping class="hr.horvat.model.Gost"/>
+          <mapping class="hr.horvat.model.Hotel"/>
           <mapping class="hr.horvat.model.Osoblje"/>
           <mapping class="hr.horvat.model.Soba"/>
+          <mapping class="hr.horvat.model.Rezervacija"/>
        
         
         
