@@ -39,6 +39,14 @@ public class Hotel extends Entitet{
      @OneToMany(mappedBy = "hotel")
     private List<Soba> sobe = new ArrayList<>();
 
+    public List<Soba> getSobe() {
+        return sobe;
+    }
+
+    public void setSobe(List<Soba> sobe) {
+        this.sobe = sobe;
+    }
+
     public String getNaziv() {
         return naziv;
     }
