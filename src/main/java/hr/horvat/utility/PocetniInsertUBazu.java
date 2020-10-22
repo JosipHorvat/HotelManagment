@@ -48,16 +48,16 @@ public class PocetniInsertUBazu {
 
         Faker faker = new Faker();
 
-        String[] oibi = {"44879378548", "38714462960", "48653367511",
-            "07463739447", "55376858772", "57121746664", "45088797644", "97067197029",
-            "36388448333", "13633152331"};
+//        String[] oibi = {"44879378548", "38714462960", "48653367511",
+//            "07463739447", "55376858772", "57121746664", "45088797644", "97067197029",
+//            "36388448333", "13633152331"};
 
         Osoblje o;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             o = new Osoblje();
             o.setIme(faker.name().firstName());
             o.setPrezime(faker.name().lastName());
-            o.setOib(oibi[i]);
+            o.setOib(Oib.getOibItCentrala());
             o.setEmail(o.getIme().toLowerCase() + "." + o.getPrezime().toLowerCase() + "@dalj.metropola.hr");
             o.setDatumRodjenja(faker.date().birthday());
             o.setZaposlenUDjelatnosti(faker.job().field());
@@ -65,10 +65,10 @@ public class PocetniInsertUBazu {
             o.setOdjel(faker.job().position());
             session.save(o);
 
-            if (i < 5) {
+            if (i < 10) {
                 o.setHotel(hotelLav);
             }
-            if (i >= 5) {
+            if (i >= 10) {
                 o.setHotel(hotelOsijek);
             }
 
