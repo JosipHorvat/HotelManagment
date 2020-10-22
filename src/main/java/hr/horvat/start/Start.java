@@ -17,6 +17,6 @@ public class Start {
     public static void main(String[] args) {
         
        // HibernateUtil.getSessionFactory().openSession();
-        PocetniInsertUBazu.izvedi();
+        PocetniInsertUBazu.izvediHotelIOsoblje();
     }
 }

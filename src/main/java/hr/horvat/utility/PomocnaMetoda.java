@@ -5,8 +5,11 @@
  */
 package hr.horvat.utility;
 
+import static java.lang.Math.random;
+import static java.lang.StrictMath.random;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Random;
 
 /**
  *
@@ -14,8 +17,16 @@ import java.math.RoundingMode;
  */
 public class PomocnaMetoda {
     
-    public static BigDecimal randomBigDecimal(BigDecimal min, BigDecimal max) {
+    public static BigDecimal nasumicniBigDecimal(BigDecimal min, BigDecimal max) {
         BigDecimal randomBigDecimal = min.add(new BigDecimal(Math.random()).multiply(max.subtract(min)));
         return randomBigDecimal.setScale(2, RoundingMode.UP);
     }
+    
+    
+    public static <T extends Enum<?>> T nasumicniEnum(Class<T> clazz){
+        Random random = new Random();
+        int x = random.nextInt(clazz.getEnumConstants().length);
+        return clazz.getEnumConstants()[x];
+    }
+    
 }
