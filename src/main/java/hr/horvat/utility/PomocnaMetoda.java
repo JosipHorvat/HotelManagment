@@ -5,8 +5,6 @@
  */
 package hr.horvat.utility;
 
-import static java.lang.Math.random;
-import static java.lang.StrictMath.random;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Random;
