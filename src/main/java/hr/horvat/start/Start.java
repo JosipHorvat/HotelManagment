@@ -10,6 +10,9 @@ import hr.horvat.model.Hotel;
 import hr.horvat.utility.HibernateUtil;
 import hr.horvat.utility.Iznimka;
 import hr.horvat.utility.PocetniInsertUBazu;
+import java.util.Scanner;
+import javax.swing.InputMap;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,11 +20,21 @@ import hr.horvat.utility.PocetniInsertUBazu;
  */
 public class Start {
     
+    
+    
     public static void main(String[] args) {
-        
+    
    // test
    Hotel hotel = new Hotel();
    ObradaHotel obradaHotel = new ObradaHotel(hotel);
+   // kontrola naziva radi
+   hotel.setNaziv("T");
+   //radi
+   hotel.setAdresa1("dddd  ");
+   hotel.setAdresa2("ddddd ");
+   
+   hotel.setBrojZvjezdica(7);
+  
         try {
              obradaHotel.kreiraj();
         } catch (Iznimka e) {
@@ -36,5 +49,8 @@ public class Start {
        // prvo se mora izmijeniti hibernate.cfg.xml
        // HibernateUtil.getSessionFactory().openSession();
                   
+    }
+    public static int ucitajInt(String poruka){
+        return Integer.parseInt(JOptionPane.showInputDialog(poruka));
     }
 }
