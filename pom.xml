@@ -59,8 +59,12 @@
         </dependency>
         
         
-
-
-     
-      </dependencies>
+        <dependency>
+            <groupId>com.jtattoo</groupId>
+            <artifactId>JTattoo</artifactId>
+            <version>1.6.13</version>
+        </dependency>
+        
+        
+    </dependencies>
 </project>

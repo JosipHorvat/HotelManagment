@@ -14,6 +14,7 @@ import hr.horvat.view.Hoteli;
 import java.util.Scanner;
 import javax.swing.InputMap;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 
 /**
  *
@@ -25,6 +26,7 @@ public class Start {
     
     public static void main(String[] args) {
     
+        
         //hotel start
         new Hoteli().setVisible(true);
         
