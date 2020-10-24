@@ -102,5 +102,12 @@ public class Hotel extends Entitet{
     public void setBrojZvjezdica(Integer brojZvjezdica) {
         this.brojZvjezdica = brojZvjezdica;
     }
+
+    @Override
+    public String toString() {
+        return getNaziv() + " "+ getBrojZvjezdica();
+    }
+    
+    
     
 }

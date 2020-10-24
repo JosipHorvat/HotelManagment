@@ -3,6 +3,7 @@ package controller;
 
 import hr.horvat.utility.HibernateUtil;
 import hr.horvat.utility.Iznimka;
+import java.util.List;
 import org.hibernate.Session;
 
 /**
@@ -37,6 +38,17 @@ public abstract class Obrada<T> {
         return entitet;
     }
     
+    public T kreirajSve(List<T> lista ) throws Iznimka{
+        session.beginTransaction();
+        for(T t : lista){
+            setEntitet(t);
+            session.save(t);
+        }
+        session.getTransaction().commit();
+        
+        return entitet;
+    }
+    
     public T izmijeni() throws Iznimka{
         kontrolaIzmijeni();
         save();
@@ -56,5 +68,13 @@ public abstract class Obrada<T> {
         session.save(entitet);
         session.getTransaction();
        } 
+
+    public T getEntitet() {
+        return entitet;
+    }
+
+    public void setEntitet(T entitet) {
+        this.entitet = entitet;
+    }
     
 }

@@ -10,6 +10,7 @@ import hr.horvat.model.Hotel;
 import hr.horvat.utility.HibernateUtil;
 import hr.horvat.utility.Iznimka;
 import hr.horvat.utility.PocetniInsertUBazu;
+import hr.horvat.view.Hoteli;
 import java.util.Scanner;
 import javax.swing.InputMap;
 import javax.swing.JOptionPane;
@@ -24,24 +25,32 @@ public class Start {
     
     public static void main(String[] args) {
     
-   // test
-   Hotel hotel = new Hotel();
-   ObradaHotel obradaHotel = new ObradaHotel(hotel);
-   // kontrola naziva radi
-   hotel.setNaziv("T");
-   //radi
-   hotel.setAdresa1("dddd  ");
-   hotel.setAdresa2("ddddd ");
-   
-   hotel.setBrojZvjezdica(7);
-  
-        try {
-             obradaHotel.kreiraj();
-        } catch (Iznimka e) {
-            System.out.println(e.getPoruka());
-        }
-  
-         
+        //hotel start
+        new Hoteli().setVisible(true);
+        
+        
+        
+        
+        
+//================TEST OBRADA HOTEL================      
+//   // test
+//   Hotel hotel = new Hotel();
+//   ObradaHotel obradaHotel = new ObradaHotel(hotel);
+//   // kontrola naziva radi
+//   hotel.setNaziv("T");
+//   //radi
+//   hotel.setAdresa1("dddd  ");
+//   hotel.setAdresa2("ddddd ");
+//   
+//   hotel.setBrojZvjezdica(7);
+//  
+//        try {
+//             obradaHotel.kreiraj();
+//        } catch (Iznimka e) {
+//            System.out.println(e.getPoruka());
+//        }
+//  
+//         
         
 //============POCETNI INSERT U BAZU============================  
              //  PocetniInsertUBazu.izvedi(); 
@@ -50,7 +59,5 @@ public class Start {
        // HibernateUtil.getSessionFactory().openSession();
                   
     }
-    public static int ucitajInt(String poruka){
-        return Integer.parseInt(JOptionPane.showInputDialog(poruka));
-    }
+   
 }

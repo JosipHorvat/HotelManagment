@@ -4,6 +4,7 @@ package controller;
 import hr.horvat.model.Hotel;
 import hr.horvat.utility.Iznimka;
 import java.math.BigDecimal;
+import java.util.List;
 /**
  * 
  * @author Josip
@@ -15,11 +16,19 @@ import java.math.BigDecimal;
 // naravno na Hrvatskom jeziku ;)
 public class ObradaHotel extends Obrada<Hotel>{
 
-    public ObradaHotel(Hotel entitet) {
-        super(entitet);
+    public ObradaHotel(Hotel hotel) {
+        super(hotel);
     }
     
+    public ObradaHotel(){
+        super();
+    }
+
     
+     public List<Hotel>getPodaci(){
+        return session.createQuery("from Hotel").list();
+    }
+  
 
     @Override
     protected void kontrolaKreiraj() throws Iznimka {
