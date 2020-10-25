@@ -5,7 +5,7 @@
  */
 package hr.horvat.start;
 
-import controller.ObradaHotel;
+import hr.horvat.controller.ObradaHotel;
 import hr.horvat.model.Hotel;
 import hr.horvat.utility.HibernateUtil;
 import hr.horvat.utility.Iznimka;
@@ -35,7 +35,7 @@ public class Start {
         
         
 //================TEST OBRADA HOTEL================      
-//   // test
+   // test
 //   Hotel hotel = new Hotel();
 //   ObradaHotel obradaHotel = new ObradaHotel(hotel);
 //   // kontrola naziva radi
@@ -44,7 +44,7 @@ public class Start {
 //   hotel.setAdresa1("dddd  ");
 //   hotel.setAdresa2("ddddd ");
 //   
-//   hotel.setBrojZvjezdica(7);
+//   hotel.setBrojZvjezdica(4);
 //  
 //        try {
 //             obradaHotel.kreiraj();

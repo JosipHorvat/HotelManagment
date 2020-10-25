@@ -1,5 +1,5 @@
 
-package controller;
+package hr.horvat.controller;
 
 import hr.horvat.utility.HibernateUtil;
 import hr.horvat.utility.Iznimka;
@@ -16,12 +16,14 @@ public abstract class Obrada<T> {
     protected Session session;
     
     // Glavne metode obrade koje ce svi entiteti u obradi morati imati.
+    public abstract List<T> getPodaci();
     protected abstract void kontrolaKreiraj() throws Iznimka;
     protected abstract void kontrolaIzmijeni() throws Iznimka;
     protected abstract void kontrolaObrisi() throws Iznimka;
 
     //Prvi konstruktor za buduce klase koji se zove entitet
     public Obrada(T entitet) {
+        this();
         this.entitet = entitet;
     }
 
@@ -32,8 +34,7 @@ public abstract class Obrada<T> {
     
     
     public T kreiraj() throws Iznimka{
-        kontrolaKreiraj();
-  //metoda save je za hibernate       
+        kontrolaKreiraj();      
         save();
         return entitet;
     }
@@ -66,7 +67,7 @@ public abstract class Obrada<T> {
     private void save() {
         session.beginTransaction();
         session.save(entitet);
-        session.getTransaction();
+        session.getTransaction().commit();
        } 
 
     public T getEntitet() {
