@@ -52,7 +52,8 @@ public class ObradaHotel extends Obrada<Hotel>{
 
     @Override
     protected void kontrolaObrisi() throws Iznimka {
-        
+        kontrolaSobe();
+        kontrolaOsoblje();
     }
     
     private void kontrolaNaziv() throws Iznimka{
@@ -94,11 +95,24 @@ public class ObradaHotel extends Obrada<Hotel>{
     }
     
     private void kontrolaBrojZvjezdica() throws Iznimka{
+        kontrolaNull(entitet.getBrojZvjezdica(), "Nije odredjen broj zvjezdica hotela");
            if(entitet.getBrojZvjezdica()==0){
             throw new Iznimka("Oznaci koliko hotel ima zvjezdica");
         }
        
     }
+    
+    private void kontrolaOsoblje() throws Iznimka{
+        if(entitet.getOsoblje().size()>0){
+            throw new Iznimka("Hotel se ne moze obrisati jer nije uklonjeno osoblje iz baze.");
+        }
+    }
+    private void kontrolaSobe() throws Iznimka{
+        if(entitet.getSobe().size()>0){
+            throw new Iznimka("Hotel se ne moze obrisati jer nisu uklonjene sobe iz baze");
+        }
+    }
+    
         
      
     

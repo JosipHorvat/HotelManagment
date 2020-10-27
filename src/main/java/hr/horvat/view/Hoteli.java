@@ -4,7 +4,10 @@ package hr.horvat.view;
 import hr.horvat.controller.ObradaHotel;
 import hr.horvat.model.Hotel;
 import hr.horvat.utility.Iznimka;
+import java.awt.Image;
+import java.io.File;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.UIManager;
 
 /**
@@ -15,9 +18,7 @@ public class Hoteli extends javax.swing.JFrame {
 
     private ObradaHotel obrada;
     private Hotel entitet;
-    /**
-     * Creates new form Hoteli
-     */
+    
     public Hoteli() {
         lookAndFeelTema();
         initComponents();       
@@ -106,6 +107,7 @@ public class Hoteli extends javax.swing.JFrame {
             }
         });
 
+        btnObrisi.setBackground(new java.awt.Color(204, 204, 255));
         btnObrisi.setText("Obrisi");
         btnObrisi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,25 +124,24 @@ public class Hoteli extends javax.swing.JFrame {
             .addGroup(pnlZaCRUDButtoneLayout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(btnOcistiPolja)
-                .addGap(55, 55, 55)
-                .addComponent(btnDodaj)
-                .addGap(51, 51, 51)
-                .addComponent(btnIzmijeni, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
-                .addComponent(btnObrisi)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGap(39, 39, 39)
+                .addComponent(btnDodaj, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(btnIzmijeni)
+                .addGap(28, 28, 28)
+                .addComponent(btnObrisi, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlZaCRUDButtoneLayout.setVerticalGroup(
             pnlZaCRUDButtoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlZaCRUDButtoneLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pnlZaCRUDButtoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnObrisi, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
-                    .addGroup(pnlZaCRUDButtoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnIzmijeni, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
-                        .addComponent(btnOcistiPolja, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnDodaj, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap()
+                .addGroup(pnlZaCRUDButtoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnObrisi, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(btnIzmijeni, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnDodaj, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addComponent(btnOcistiPolja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -186,7 +187,7 @@ public class Hoteli extends javax.swing.JFrame {
                     .addComponent(txtAdresa3, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtWebStranica, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addGroup(pnlPodaciLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(starRater1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
@@ -199,9 +200,9 @@ public class Hoteli extends javax.swing.JFrame {
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlPodaciLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNaziv, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(starRater1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlPodaciLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(starRater1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNaziv, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
@@ -261,9 +262,9 @@ public class Hoteli extends javax.swing.JFrame {
             .addComponent(pnlZaListu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(pnlZaCRUDButtone, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlZaCRUDButtone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4))
         );
 
         pack();
@@ -275,6 +276,11 @@ public class Hoteli extends javax.swing.JFrame {
         lblPoruka.setText("");
         entitet = new Hotel();
         
+         if (starRater1.getSelection() == 0) {
+            entitet.setBrojZvjezdica(entitet.getBrojZvjezdica());
+        } else {
+            entitet.setBrojZvjezdica(starRater1.getSelection());
+        }
         postaviVrijednostiUEntitet();
         
         try {
@@ -291,9 +297,9 @@ public class Hoteli extends javax.swing.JFrame {
           entitet = lstPodaci.getSelectedValue();
             if(entitet== null){
                 return;
-            }
+            }         
             postaviVrijednostiUEntitet();
-            
+                       
             try {
             obrada.izmijeni();
             ucitajPodatke();
@@ -395,8 +401,7 @@ public class Hoteli extends javax.swing.JFrame {
         entitet.setAdresa3(txtAdresa3.getText());
         entitet.setBrojTelefona(txtBrojTelefona.getText());
         
-        
-        if (starRater1.getSelection() == 0) {
+          if (starRater1.getSelection() == 0) {
             entitet.setBrojZvjezdica(entitet.getBrojZvjezdica());
         } else {
             entitet.setBrojZvjezdica(starRater1.getSelection());
@@ -422,7 +427,7 @@ public class Hoteli extends javax.swing.JFrame {
         OcistiPoruku op = new OcistiPoruku();
         op.start();
     }
-    
+  
     private class OcistiPoruku extends Thread{ 
         
          @Override
